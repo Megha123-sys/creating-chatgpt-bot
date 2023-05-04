@@ -32,8 +32,9 @@ def speak():
                frequency_penalty = 0.0,
                presence_penalty = 0.0
             )  
-        
-            my_text.insert(END, response)
+            editedresponse = response["choices"][0]["text"].strip
+            my_text.insert(END, "\n")
+            my_text.insert(END, editedresponse)
            
         else:
             my_text.insert(END, "\n\n No open ai key is found, please a give a valid one \n")
